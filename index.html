@@ -38,7 +38,7 @@
             let result = [];
             for (let i = 0; i < 6; i++) {
                 let randomIndex = Math.floor(Math.random() * tempArray.length);
-                result.push(tempArray.[randomIndex]); // 선택한 요소를 제거하여 중복 방지
+                result.push(tempArray[randomIndex]); // 선택한 요소를 제거하여 중복 방지
             }
             document.getElementById("pensionResult").innerHTML = 
                 "연금복권 번호: " + result;
