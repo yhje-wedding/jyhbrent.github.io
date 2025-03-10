@@ -26,7 +26,7 @@
 <body>
     <h1>로또 & 연금복권 번호 생성기</h1>
     <button onclick="generateLottoNumbers()">로또 번호 생성</button>
-    <button onclick="getRandomElements()">연금복권 번호 생성</button>
+    <button onclick="generatePensionNumbers()">연금복권 번호 생성</button>
     
     <div id="lottoResult"></div>
     <div id="pensionResult"></div>
@@ -54,9 +54,9 @@
         // 연금복권 번호 생성 (000000~999999 중 2개, 배열 기반)
         function generatePensionNumbers() {
             let pensionPool = Array.from({length: 1000000}, (_, i) => String(i).padStart(6, '0')); // '000000'~'999999' 배열 생성
-            let pensionNumbers = getRandomElements(pensionPool, 2);
+            let pensionNumbers = getRandomElements(pensionPool, 1);
             document.getElementById("pensionResult").innerHTML = 
-                "연금복권 번호: " + pensionNumbers[0] + " - " + pensionNumbers[1];
+                "연금복권 번호: " + pensionNumbers[0];
         }
     </script>
 </body>
