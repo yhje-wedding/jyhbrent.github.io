@@ -33,15 +33,14 @@
 
     <script>
         // 배열에서 랜덤하게 선택하는 함수
-        function getRandomElements() {
-            let tempArray = [0,1,2,3,4,5,6,7,8,9]; // 원본 배열을 복사
+        function getRandomElements(array, count) {
+            let tempArray = [...array]; // 원본 배열을 복사
             let result = [];
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < count; i++) {
                 let randomIndex = Math.floor(Math.random() * tempArray.length);
-                result.push(tempArray[randomIndex]); // 선택한 요소를 제거하여 중복 방지
+                result.push(tempArray.splice(randomIndex, 1)[0]); // 선택한 요소를 제거하여 중복 방지
             }
-            document.getElementById("pensionResult").innerHTML = 
-                "연금복권 번호: " + result;
+            return result;
         }
 
         // 로또 번호 생성 (1~45 중 6개, 배열 기반)
