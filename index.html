@@ -40,7 +40,8 @@
                 let randomIndex = Math.floor(Math.random() * tempArray.length);
                 result.push(tempArray.[randomIndex]); // 선택한 요소를 제거하여 중복 방지
             }
-            return result;
+            document.getElementById("pensionResult").innerHTML = 
+                "연금복권 번호: " + result;
         }
 
         // 로또 번호 생성 (1~45 중 6개, 배열 기반)
